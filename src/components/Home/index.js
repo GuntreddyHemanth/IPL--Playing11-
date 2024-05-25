@@ -31,10 +31,29 @@ class Home extends Component {
         this.setTeams(formattedData, false)
     }
 
+    renderLoader = () => {
+        <div data-testid="loader" className="loader-container">
+            <Loader type="oval" color="#ffffff" height="50"/>
+        </div>
+    }
+
     render(){
-        const {isLoading} = this.state 
+        const {isLoading} = this.state
 
         return(
+            <div className="home-route-container">
+                <div className="team-list-container">
+                    <div className="ipl-dashboard-heading-container">
+                        <img
+                            src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
+                            alt="ipl-logo"
+                            className="ipl-logo"
+                        />
+                        <h1 className="ipl-dashboard-heading">IPL Dashboard</h1>
+                    </div>
+                    {isLoading ? this.renderLoader()}
+                </div>
+            </div>
 
         )
     }
