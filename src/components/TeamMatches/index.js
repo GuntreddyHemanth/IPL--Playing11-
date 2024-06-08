@@ -62,8 +62,8 @@ class TeamMatches extends Component {
   }
 
   renderRecentMatchesList = () => {
-    const {recentMatchData} = this.state
-    const {recentMatches} = recentMatchData
+    const {recentMatchesData} = this.state
+    const {recentMatches} = recentMatchesData
 
     return (
       <ul className="recent-match-list">
@@ -96,7 +96,7 @@ class TeamMatches extends Component {
     </div>
   )
 
-  getRouterClassName = () => {
+  getRouteClassName = () => {
     const {match} = this.props
     const {params} = match
     const {id} = params
@@ -125,7 +125,7 @@ class TeamMatches extends Component {
 
   render() {
     const {isLoading} = this.state
-    const className = `team-matches-route-container ${this.getRouterClassName()}`
+    const className = `team-matches-route-container ${this.getRouteClassName()}`
 
     return (
       <div className={className}>
